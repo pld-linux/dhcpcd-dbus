@@ -1,7 +1,7 @@
 Summary:	DBus bindings for dhcpcd
 Name:		dhcpcd-dbus
 Version:	0.5.2
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://roy.marples.name/downloads/dhcpcd/%{name}-%{version}.tar.bz2
@@ -39,5 +39,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/dhcpcd-dbus.conf
-%{_libdir}/dhcpcd-dbus
+%attr(755,root,root) %{_libdir}/dhcpcd-dbus
 %{_datadir}/dbus-1/system-services/name.marples.roy.dhcpcd.service
