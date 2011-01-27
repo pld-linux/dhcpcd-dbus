@@ -8,6 +8,7 @@ Source0:	http://roy.marples.name/downloads/dhcpcd/%{name}-%{version}.tar.bz2
 # Source0-md5:	29ab75851bc907d698add2087b0d28d3
 URL:		http://roy.marples.name/projects/dhcpcd-dbus/wiki
 BuildRequires:	dbus-devel >= 1.1.0
+BuildRequires:	pkgconfig
 Requires:	dhcpcd >= 5.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
