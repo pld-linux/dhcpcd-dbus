@@ -1,11 +1,11 @@
 Summary:	DBus bindings for dhcpcd
 Name:		dhcpcd-dbus
-Version:	0.5.2
-Release:	3
+Version:	0.6.1
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://roy.marples.name/downloads/dhcpcd/%{name}-%{version}.tar.bz2
-# Source0-md5:	29ab75851bc907d698add2087b0d28d3
+# Source0-md5:	3e0762be2f2336dceebaa319f388c8dd
 URL:		http://roy.marples.name/projects/dhcpcd-dbus/wiki
 BuildRequires:	dbus-devel >= 1.1.0
 BuildRequires:	pkgconfig
@@ -26,7 +26,10 @@ its control socket.
 
 %build
 %configure
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} %{rpmcppflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,5 +43,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/dhcpcd-dbus.conf
-%attr(755,root,root) %{_libdir}/dhcpcd-dbus
+%attr(755,root,root) %{_libexecdir}/dhcpcd-dbus
 %{_datadir}/dbus-1/system-services/name.marples.roy.dhcpcd.service
