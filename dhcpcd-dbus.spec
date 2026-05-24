@@ -5,9 +5,9 @@ Version:	0.6.1
 Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://roy.marples.name/downloads/dhcpcd/%{name}-%{version}.tar.bz2
+Source0:	https://cflags.cc/roy/dhcpcd/%{name}-%{version}.tar.bz2
 # Source0-md5:	3e0762be2f2336dceebaa319f388c8dd
-URL:		http://roy.marples.name/projects/dhcpcd-dbus/wiki
+URL:		https://roy.marples.name/projects/dhcpcd
 BuildRequires:	dbus-devel >= 1.1.0
 BuildRequires:	pkgconfig
 Requires:	dhcpcd >= 5.0.0
