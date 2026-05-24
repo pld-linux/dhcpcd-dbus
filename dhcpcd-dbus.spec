@@ -8,8 +8,9 @@ Group:		Libraries
 Source0:	https://cflags.cc/roy/dhcpcd/%{name}-%{version}.tar.bz2
 # Source0-md5:	3e0762be2f2336dceebaa319f388c8dd
 URL:		https://roy.marples.name/projects/dhcpcd
-BuildRequires:	dbus-devel >= 1.1.0
+BuildRequires:	dbus-devel >= 1.2.0
 BuildRequires:	pkgconfig
+Requires:	dbus >= 1.2.0
 Requires:	dhcpcd >= 5.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,14 +36,14 @@ sterujące na potrzeby obsługi interfejsów bezprzewodowych.
 %setup -q
 
 %build
+# not autoconf configure, but accepts options in the same way/skips unknown
 %configure
 %{__make} \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} %{rpmcppflags}" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
