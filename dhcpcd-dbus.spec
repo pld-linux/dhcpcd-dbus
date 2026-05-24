@@ -1,4 +1,5 @@
 Summary:	DBus bindings for dhcpcd
+Summary(pl.UTF-8):	Wiązania DBus dla dhcpcd
 Name:		dhcpcd-dbus
 Version:	0.6.1
 Release:	1
@@ -20,6 +21,15 @@ interface.
 
 dhcpcd-dbus also listens to wpa_supplicant for wireless interfaces via
 its control socket.
+
+%description -l pl.UTF-8
+dhcpcd-dbus odbiera zdarzenia konfiguracji interfejsu od gniazda
+sterującego dhcpcd i emituje je do programów nasłuchujących DBus. Ma
+także metody do zwalniania, ponownego wiązania, zatrzymywania,
+odpytywania i konfiguracji dhcpcd na interfejsie.
+
+dhcpcd-dbus ponadto nasłuchuje wpa_supplicanta poprzez jego gniazdo
+sterujące na potrzeby obsługi interfejsów bezprzewodowych.
 
 %prep
 %setup -q
